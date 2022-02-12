@@ -13,8 +13,31 @@ def sum(arr)
   return s
 end
 
-def max_2_sum arr
-  # YOUR CODE HERE
+def max_2_sum(arr)
+  
+  if arr.length() == 0
+    return 0
+    
+  elsif arr.length() == 1
+    return arr[0]
+  end
+  
+  l1 = -1/0.0
+  l2 =  -1/0.0
+  
+  for n in arr do
+
+    if n > l1
+      l2 = l1
+      l1 = n
+      
+    elsif n > l2
+      l2 = n
+    end
+  end
+  
+  return l1 + l2
+  
 end
 
 def sum_to_n? arr, n
@@ -40,3 +63,5 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
+
+print max_2_sum([1, -2, -3, -4, -5])
