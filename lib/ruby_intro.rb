@@ -2,8 +2,15 @@
 
 # Part 1
 
-def sum arr
+def sum(arr)
   # YOUR CODE HERE
+  s = 0
+  
+  for num in arr do
+    s = s + num
+  end
+  
+  return s
 end
 
 def max_2_sum arr
