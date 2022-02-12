@@ -41,7 +41,20 @@ def max_2_sum(arr)
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  seen = {}
+  
+  for num in arr do
+    required = n - num
+    
+    if seen.key?(required)
+      return true
+    end
+    
+    seen[num] = true
+  end
+  
+  return false
+    
 end
 
 # Part 2
@@ -63,5 +76,3 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
-
-print max_2_sum([1, -2, -3, -4, -5])
