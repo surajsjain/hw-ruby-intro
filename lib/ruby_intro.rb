@@ -93,5 +93,53 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+
+  def initialize(isbn, price)
+    if isbn == ""
+      raise ArgumentError.new("ISBN is wrong")
+    else
+      @isbn = isbn
+    end
+    
+    if price <= 0
+      raise ArgumentError.new("Price is wrong")
+    else
+      @price = price
+    end
+  end
+  
+  def price
+    @price
+  end
+  
+  def price=(new_val)
+    if new_val <= 0
+      raise ArgumentError.new("Price is wrong")
+    else
+      @price = new_val
+    end
+  end
+  
+  def isbn
+    @isbn
+  end
+  
+  def isbn=(new_val)
+    if new_val == ""
+      raise ArgumentError.new("ISBN is wrong")
+    else
+      @isbn = new_val
+    end
+  end
+  
+  def price_as_string()
+    string_price = @price.to_f.to_s
+    
+    if string_price.split('.')[1].length() < 2
+      string_price += "0"
+    end
+    
+    return "$" + string_price
+  end
+  
 end
